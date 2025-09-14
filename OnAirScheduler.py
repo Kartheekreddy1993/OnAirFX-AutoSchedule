@@ -13,7 +13,7 @@ conn = pyodbc.connect(conn_str)
 cursor = conn.cursor()
 
 # Execute a SELECT query to fetch specific columns from tblTrackInfo where TypeID = 4
-cursor.execute("SELECT tblRow, TypeID, GpID, FilePath FROM tblTrackInfo WHERE TypeID = ? AND FilePath LIKE ?", (4, '%2025%'))
+cursor.execute("SELECT tblRow, TypeID, GpID, FilePath FROM tblTrackInfo WHERE TypeID = ? AND FilePath LIKE ? ORDER BY tblRow", (4, '%H:\\2023\\%'))
 
 rows = cursor.fetchall()
 
